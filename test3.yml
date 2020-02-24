@@ -1,0 +1,19 @@
+---
+- name: ec2 launcher
+  hosts: localhost
+  connection: local
+  tasks:
+   - name: launching ec2
+     ec2:
+        instance_type: t2.micro
+        key_name: new_key
+        aws_access_key: AKIATU75ZMAAKC57NIJV
+        aws_secret_key: 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
+        image: ami-016ec067d44808c4f
+        region: ap-south-1
+        group: my Arena
+        count: 1
+        vpc_subnet_id: subnet-00d7ddb5bb6ea24ce
+        wait: yes
+        assign_public_ip: yes
+
